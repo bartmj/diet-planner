@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import UserPanel from './components/UserPanel';
 
 function App() {
+
+  const handleClick = () => {
+    alert("cool")
+  };
+
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="container">
+          <h1>Diet Planner</h1>
+        </div>
       </header>
+      <section className="container">
+        <UserPanel />
+      </section>
     </div>
   );
 }
