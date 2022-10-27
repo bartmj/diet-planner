@@ -58,14 +58,16 @@ class UserPanel extends React.Component {
             name: n
         })
         let obj = options.find(o => o.value === n);
-        this.setState({
-            protein: obj.protein
-        });
+        if (obj) {
+            this.setState({
+                protein: obj.protein
+            });
+        }
     }
 
     render() {
         return <>
-            <h2>Total Protein {this.state.total}g</h2>
+            <h2>Total Protein {Math.round(this.state.total * 100) / 100}g</h2>
 
             <label>food:</label>
             <input
