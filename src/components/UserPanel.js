@@ -6,7 +6,11 @@ const options = [
     { id: 3, value: 'cheese piątnica semi-fat', protein: 16, calories: 485 },
     { id: 4, value: 'peanut butter', protein: 23.78, calories: 642 },
     { id: 5, value: 'oats', protein: 14, calories: 418 },
-    { id: 6, value: 'walnut', protein: 15, calories: 654.4 }
+    { id: 6, value: 'walnut', protein: 15, calories: 654.4 },
+    { id: 7, value: 'dark bread', protein: 8.5, calories: 218 },
+    { id: 8, value: 'protein bar Olymp 64 g', protein: 31, calories: 369 },
+    { id: 9, value: 'WPI 90 Olymp', protein: 90, calories: 373 },
+    { id: 10, value: 'wheat noodles, cooked', protein: 5.15, calories: 131 }
 ]
 
 class UserPanel extends React.Component {
@@ -36,7 +40,7 @@ class UserPanel extends React.Component {
         this.setState({
             foods: [
                 ...this.state.foods,
-                { id: this.state.id + 1, name: this.state.name, protein: proteinPerFood }
+                { id: this.state.id + 1, name: this.state.name, protein: proteinPerFood, calories: caloriesPerFood }
             ],
             name: '',
             protein: 0,
@@ -109,7 +113,7 @@ class UserPanel extends React.Component {
                 name="protein"
                 value={this.state.protein}
                 onChange={this.handleProteinChange} />
-            <label>calories</label>
+            <label>calories/100g</label>
             <input
                 name="calories"
                 value={this.state.calories}
@@ -117,7 +121,7 @@ class UserPanel extends React.Component {
             {this.state.foods.map(food => {
                 return (
                     <div key={food.id}>
-                        <p>food: {food.name} protein: {food.protein}g</p>
+                        <p>food: {food.name}, protein: {food.protein}g, calories: {food.calories}</p>
                         <hr />
                     </div>
                 );
