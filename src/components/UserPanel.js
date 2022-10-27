@@ -50,13 +50,6 @@ class UserPanel extends React.Component {
         })
     }
 
-    handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            console.log('do validate')
-        }
-    }
-
-
     render() {
         return <>
             <h2>Total Protein {this.state.total}g</h2>
