@@ -12,10 +12,13 @@ input {
   margin: 12px;
 }
 
-.App-header{
+.App-header {
   background-color:cornflowerblue;
   padding: 6px 0 6px 0;
 }
 
-.App-header h1{
+.input {
+  width: 420px;
 }
+
+#multiselect::-webkit-calendar-picker-indicator { display: none !important; }
