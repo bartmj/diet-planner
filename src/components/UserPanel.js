@@ -4,7 +4,9 @@ const options = [
     { id: 1, value: 'chicken', protein: 27, calories: 239 },
     { id: 2, value: 'eggs', protein: 13, calories: 155.1 },
     { id: 3, value: 'cheese piątnica semi-fat', protein: 16, calories: 485 },
-    { id: 4, value: 'peanut butter', protein: 23.78, calories: 642 }
+    { id: 4, value: 'peanut butter', protein: 23.78, calories: 642 },
+    { id: 5, value: 'oats', protein: 14, calories: 418 },
+    { id: 6, value: 'walnut', protein: 15, calories: 654.4 }
 ]
 
 class UserPanel extends React.Component {
