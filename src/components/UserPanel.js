@@ -1,5 +1,5 @@
 import React from 'react';
-
+import data from '../macros'
 
 class UserPanel extends React.Component {
 
@@ -9,6 +9,7 @@ class UserPanel extends React.Component {
             weight: 0,
             protein: 0,
             total: 0,
+            id: 0,
             name: '',
             foods: []
         };
@@ -18,16 +19,18 @@ class UserPanel extends React.Component {
     }
 
     addObjectToArray = e => {
+        // console.log(data)
         e.preventDefault();
         let proteinPerFood = (this.state.weight * this.state.protein) / 100
         this.setState({
             foods: [
                 ...this.state.foods,
-                { name: this.state.name, protein: proteinPerFood }
+                { id: this.state.id + 1, name: this.state.name, protein: proteinPerFood }
             ],
             name: '',
             protein: 0,
             weight: 0,
+            id: this.state.id + 1,
             total: this.state.total + proteinPerFood
         })
     };
