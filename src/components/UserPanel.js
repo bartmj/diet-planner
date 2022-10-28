@@ -27,10 +27,8 @@ class UserPanel extends React.Component {
             name: '',
             foods: []
         };
-        this.handleWeightChange = this.handleWeightChange.bind(this);
-        this.handleProteinChange = this.handleProteinChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
-        this.handleCaloriesChange = this.handleCaloriesChange.bind(this);
     }
 
     addObjectToArray = e => {
@@ -51,23 +49,14 @@ class UserPanel extends React.Component {
         })
     };
 
-    handleWeightChange(e) {
+    handleChange(e) {
+        console.log(e.target)
+        const value = e.target.value
         this.setState({
-            weight: e.target.value
+            [e.target.name]: value
         });
     }
 
-    handleProteinChange(e) {
-        this.setState({
-            protein: e.target.value
-        });
-    }
-
-    handleCaloriesChange(e) {
-        this.setState({
-            calories: e.target.value
-        });
-    }
 
     handleNameChange(e) {
         let n = e.target.value
@@ -107,17 +96,17 @@ class UserPanel extends React.Component {
             <input
                 name="weight"
                 value={this.state.weight}
-                onChange={this.handleWeightChange} />
+                onChange={this.handleChange} />
             <label>protein/100g:</label>
             <input
                 name="protein"
                 value={this.state.protein}
-                onChange={this.handleProteinChange} />
+                onChange={this.handleChange} />
             <label>calories/100g</label>
             <input
                 name="calories"
                 value={this.state.calories}
-                onChange={this.handleCaloriesChange} />
+                onChange={this.handleChange} />
             {this.state.foods.map(food => {
                 return (
                     <div key={food.id}>

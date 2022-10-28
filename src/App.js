@@ -4,10 +4,6 @@ import MetaTags from 'react-meta-tags';
 
 function App() {
 
-  const handleClick = () => {
-    alert("cool")
-  };
-
 
   return (
     <div className="App">
