@@ -122,7 +122,7 @@ class UserPanel extends React.Component {
             {this.state.foods.map(food => {
                 return (
                     <div key={food.id}>
-                        <p>food: {food.name}, protein: {food.protein}g, calories: {food.calories}</p>
+                        <p>food: {food.name}, protein: {Math.round(food.protein * 100) / 100}g, calories: {Math.round(food.calories * 100) / 100}kcal</p>
                         <button
                             onClick={() => this.removeObject(food.id)}
                             type="button">x</button>
