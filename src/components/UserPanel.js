@@ -74,7 +74,7 @@ class UserPanel extends React.Component {
         this.setState({
             name: n
         })
-        let obj = options.find(o => o.value === n);
+        let obj = options.find(o => o.value.toLowerCase() === n.toLowerCase());
         if (obj) {
             this.setState({
                 protein: obj.protein,
