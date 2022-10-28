@@ -4,7 +4,6 @@ import MetaTags from 'react-meta-tags';
 
 function App() {
 
-
   return (
     <div className="App">
       <MetaTags>
