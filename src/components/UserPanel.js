@@ -20,7 +20,7 @@ class UserPanel extends React.Component {
         this.state = {
             weight: 0,
             protein: 0,
-            total: 0,
+            totalProtein: 0,
             totalKcal: 0,
             calories: 0,
             id: 0,
@@ -29,6 +29,7 @@ class UserPanel extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleNameChange = this.handleNameChange.bind(this);
+
     }
 
     addObjectToArray = e => {
@@ -44,19 +45,30 @@ class UserPanel extends React.Component {
             protein: 0,
             weight: 0,
             id: this.state.id + 1,
-            total: this.state.total + proteinPerFood,
+            totalProtein: this.state.totalProtein + proteinPerFood,
             totalKcal: this.state.totalKcal + caloriesPerFood
         })
     };
 
+    removeObject = val => {
+        let obj = this.state.foods.find(o => o.id === val);
+        this.setState({
+            foods: this.state.foods.filter(obj => {
+                return obj.id !== val;
+            }),
+            totalProtein: this.state.totalProtein - obj.protein,
+            totalKcal: this.state.totalKcal - obj.calories
+
+        })
+    }
+
+
     handleChange(e) {
-        console.log(e.target)
         const value = e.target.value
         this.setState({
             [e.target.name]: value
         });
     }
-
 
     handleNameChange(e) {
         let n = e.target.value
@@ -75,7 +87,7 @@ class UserPanel extends React.Component {
     render() {
         return <>
             <h3>Total calories {Math.round(this.state.totalKcal * 100) / 100}kcal</h3>
-            <h3>Total protein {Math.round(this.state.total * 100) / 100}g</h3>
+            <h3>Total protein {Math.round(this.state.totalProtein * 100) / 100}g</h3>
 
             <label>food:</label>
             <input
@@ -111,6 +123,9 @@ class UserPanel extends React.Component {
                 return (
                     <div key={food.id}>
                         <p>food: {food.name}, protein: {food.protein}g, calories: {food.calories}</p>
+                        <button
+                            onClick={() => this.removeObject(food.id)}
+                            type="button">x</button>
                         <hr />
                     </div>
                 );
