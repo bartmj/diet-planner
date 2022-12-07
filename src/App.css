@@ -1,0 +1,59 @@
+#multiselect::-webkit-calendar-picker-indicator { display: none !important; }
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+nav ul li {
+  display: inline-block;
+  width: 120px;
+  float: right;
+}
+
+
+.form-group {
+  display: block;
+  margin: 8px 0;
+}
+
+.add-button {
+  display: inline-block;
+}
+
+.x-btn {
+  display: grid;
+  align-items: center;
+  width: 22px;
+  margin-left: 24px;
+}
+
+nav {
+  height: 84px;
+  background-color: #10654e;
+  margin-bottom: 100px;
+}
+
+.grid-1-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.flex-01 {
+  display: flex;
+  color: darkblue;
+}
+
+.flex {
+  display: flex;
+}
+
+.error-msg {
+  color: #cc0000;
+}
+
+
+
+
+
+
